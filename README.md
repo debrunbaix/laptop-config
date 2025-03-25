@@ -42,9 +42,6 @@ cursor_blink true
 # -- OH MY ZSH --
 export ZSH="$HOME/.oh-my-zsh"
 
-# -- THEME --
-ZSH_THEME="refined"
-
 # -- PLUGINS --
 plugins=(
   git
@@ -56,68 +53,20 @@ source $ZSH/oh-my-zsh.sh
 # -- ALIAS --
 alias python="/usr/bin/python3"
 alias e="exit"
-alias maj="sudo apt update && sudo apt upgrade -y"
+alias maj="sudo pacman -Yuo"
 alias ipa="ip -br -c a"
-alias install="sudo apt install"
+alias install="sudo pacman -S"
 alias r2="radare2"
 alias bat="batcat"
 alias v="nvim"
-alias ya="yazi"
+alias y="yazi"
 
 # -- EXEGOL --
 export PATH="$PATH:/home/debrunbaix/.local/bin"
 alias exegol='sudo -E /home/debrunbaix/.local/bin/exegol'
 
 eval "$(zoxide init zsh)"
-export PATH="$HOME/.npm-global/bin:$PATH"
-
-xinput set-prop "VEN_04F3:00 04F3:3242 Touchpad" "libinput Tapping Enabled" 1
 ```
-# IDE
-
-## Neovim
-
-### My config
-
-```bash tree
-nvim
-├── init.lua
-└── lua
-    ├── config
-    │   └── lazy.lua
-    └── plugins
-        ├── alpha.lua
-        ├── colorizer.lua
-        ├── colorscheme.lua
-        ├── lsp.lua
-        ├── oil.lua
-        └── telescope.lua
-```
-### Use it
-
-Install the lsp server.
-
-```bash
-sudo pacman -S clang pyright
-```
-
-Move the nvim config to your user config
-
-```bash
-cp -r dellbrunbaix_config/nvim ~/.config/nvim
-```
-
-Test the config
-
-```bash
-nvim
-```
-### Shortcut
-
-| Shortcut | Action         |
-| -------- | -------------- |
-| space, o | Open Oil       |
-| space, f | Open Telescope |
 
 # Usefull tool
 
